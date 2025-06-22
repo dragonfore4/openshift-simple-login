@@ -1,0 +1,121 @@
+﻿kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: frontend.route
+  namespace: app-project
+  uid: 624c6846-573b-4fc0-9d4d-cc85c7ddfcab
+  resourceVersion: '5325713'
+  creationTimestamp: '2025-06-22T04:29:44Z'
+  annotations:
+    openshift.io/host.generated: 'true'
+  managedFields:
+    - manager: openshift-router
+      operation: Update
+      apiVersion: route.openshift.io/v1
+      time: '2025-06-22T04:55:30Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:status':
+          'f:ingress': {}
+      subresource: status
+    - manager: Mozilla
+      operation: Update
+      apiVersion: route.openshift.io/v1
+      time: '2025-06-22T05:27:06Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:spec':
+          'f:host': {}
+          'f:port':
+            .: {}
+            'f:targetPort': {}
+          'f:tls':
+            .: {}
+            'f:certificate': {}
+            'f:insecureEdgeTerminationPolicy': {}
+            'f:key': {}
+            'f:termination': {}
+          'f:to':
+            'f:kind': {}
+            'f:name': {}
+            'f:weight': {}
+          'f:wildcardPolicy': {}
+spec:
+  host: frontend.sirasith.net
+  to:
+    kind: Service
+    name: frontend
+    weight: 100
+  port:
+    targetPort: 3000
+  tls:
+    termination: edge
+    certificate: |-
+      -----BEGIN CERTIFICATE-----
+      MIIEpDCCA4ygAwIBAgIUbBJ+ur6pYahDechL6s4bIprBmj4wDQYJKoZIhvcNAQEL
+      BQAwgYsxCzAJBgNVBAYTAlVTMRkwFwYDVQQKExBDbG91ZEZsYXJlLCBJbmMuMTQw
+      MgYDVQQLEytDbG91ZEZsYXJlIE9yaWdpbiBTU0wgQ2VydGlmaWNhdGUgQXV0aG9y
+      aXR5MRYwFAYDVQQHEw1TYW4gRnJhbmNpc2NvMRMwEQYDVQQIEwpDYWxpZm9ybmlh
+      MB4XDTI1MDYyMjA1MTMwMFoXDTQwMDYxODA1MTMwMFowYjEZMBcGA1UEChMQQ2xv
+      dWRGbGFyZSwgSW5jLjEdMBsGA1UECxMUQ2xvdWRGbGFyZSBPcmlnaW4gQ0ExJjAk
+      BgNVBAMTHUNsb3VkRmxhcmUgT3JpZ2luIENlcnRpZmljYXRlMIIBIjANBgkqhkiG
+      9w0BAQEFAAOCAQ8AMIIBCgKCAQEA8bALlFOuAvKi0vf01lXB9AgU8i9Im6Loagrn
+      FOo/w746QNBdsS6xMdAv7dcCrgk/DkTOOYjxztqicTjLE4Shz0z1460Qvmv36fif
+      HqZuprsFJ26zbwJ6hEXAMfr3HTpB3f1nlhfGSF9uftRf281FhJwmnw+/G5Y29wVp
+      ahHWvxoszjFQEkCGNtISOcYh9pTGklg35cvheE0UkKZgPYrNYDdZ+HoTrVjOe9h4
+      vDZCw7bzP7zNZbLUlbbhNO1LEg5DJmBqHyRuScOHGO2biYiO13UoWnzucM1U54HS
+      LIWA1l7YjIZENSqtTd92LJ/cjQBK5ztyftZjVnsy3RaWDtuOxwIDAQABo4IBJjCC
+      ASIwDgYDVR0PAQH/BAQDAgWgMB0GA1UdJQQWMBQGCCsGAQUFBwMCBggrBgEFBQcD
+      ATAMBgNVHRMBAf8EAjAAMB0GA1UdDgQWBBT6zc4SXAoPDwVlmo6TkQExT4am5DAf
+      BgNVHSMEGDAWgBQk6FNXXXw0QIep65TbuuEWePwppDBABggrBgEFBQcBAQQ0MDIw
+      MAYIKwYBBQUHMAGGJGh0dHA6Ly9vY3NwLmNsb3VkZmxhcmUuY29tL29yaWdpbl9j
+      YTAnBgNVHREEIDAegg4qLnNpcmFzaXRoLm5ldIIMc2lyYXNpdGgubmV0MDgGA1Ud
+      HwQxMC8wLaAroCmGJ2h0dHA6Ly9jcmwuY2xvdWRmbGFyZS5jb20vb3JpZ2luX2Nh
+      LmNybDANBgkqhkiG9w0BAQsFAAOCAQEArSKzHrTH8MQLZzWYBj7hRWXY6UwDjvNd
+      /duK8hExWHjiROB90DUOh/Fws7VpuM9ZRMDGkkp0SnGdrAGEwIfzFFKQM7msmHe9
+      14Yd6xZMLIevx0AXdQjq4UwrhKaa/u5YCYnEwhJdLVXETKobh84oDJKWQBXaWQUZ
+      jm5TgBoB7XbaJitbpDk0jCwOtl/Mp55ZQKI3b4n+NqEXiQIppTvXD0LqMNr5gM0k
+      vSZkfv3ErqpNQ8hEqLHN1PmJOR/AG7AUwdL/Hh+EeHsDGfRxhtkR8D1SwZW3s3tx
+      X0yiVfg7YHtLPVhPBy4V+M0oH1z+CfquWlxrEPw1ii+NtgJwTUzvDA==
+      -----END CERTIFICATE-----
+    key: |-
+      -----BEGIN PRIVATE KEY-----
+      MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDxsAuUU64C8qLS
+      9/TWVcH0CBTyL0ibouhqCucU6j/DvjpA0F2xLrEx0C/t1wKuCT8ORM45iPHO2qJx
+      OMsThKHPTPXjrRC+a/fp+J8epm6muwUnbrNvAnqERcAx+vcdOkHd/WeWF8ZIX25+
+      1F/bzUWEnCafD78bljb3BWlqEda/GizOMVASQIY20hI5xiH2lMaSWDfly+F4TRSQ
+      pmA9is1gN1n4ehOtWM572Hi8NkLDtvM/vM1lstSVtuE07UsSDkMmYGofJG5Jw4cY
+      7ZuJiI7XdShafO5wzVTngdIshYDWXtiMhkQ1Kq1N33Ysn9yNAErnO3J+1mNWezLd
+      FpYO247HAgMBAAECggEAAhwDPdwtHKF5glXfsS82bibT5/k5rQIS/TnzIl+ZBuBW
+      KdKnvrAlo8WpZW4G+/XgswMuuZnUYnXODSbtvtHdh62oR8Bu8PqIQ2aEHQRe2t2v
+      AdUZg9KFtznUn5sNJRgpEwLvMIQsmt0aXckEvSphfPLP83tzs43wFN/bN63ILgrM
+      GVnkoCIWVgUtwYCuDd5CM85tiorpwFiNqjyYzvDzoCbTg9ng68xGVCq/C80hqqVV
+      3EOiEFl+lfSAHZjMneZL1VnWIu9ULUtKWY5d3wPUQNRTOULI89wQRwTp582uH/hQ
+      iXGul6xlgg7/hE/aPkp+W5r+YF0at9OBTzZFcpPR4QKBgQD/hxkX4RTwA7lC+hNd
+      CLNlmeOViX5NBlB3t+NZTjzofk35RiHqvGkT2f3NXmoxdQgW0gy6K8fOfplLtZUL
+      ziV6WfCnIPdSCPESXVmhLfsGSeTKIiMCS1GNpo2pTcKYeMyTW0doWSmZlDBKjMm0
+      TmHJZzBfp1Yk/sgNKSXD2e0UiwKBgQDyImYapFHdwofnHJgdTJ8cBLR6iqUrJ46C
+      iPrzcv353wYrlRPJT0hJpr5g098aW6lDi3P0zOm1xvcQFVAYdoWMFuDGOmM209uQ
+      /0kLpDDFIBowwUxmfL++tpMTERKapeDQCqh3AELJOlpTUVl9NyDmmkqiWKDg1c9I
+      SoGIbaaqNQKBgFCDlwqJJ3nBEpziAzvrQ+udo7I4ko1ekfhG/uHi3xo6wgLrcEBw
+      gYN5ypjtSPSwdY4LPWtj5B9SkKbkXkRL/k8hC8z9fDBjFOK+e0FoJZKDsg1m2DUe
+      2mGRu00/bTNxzLQZrNRaU9tKcDTtS5j+oZ0+YGWjamdZyFstPfMKNcOlAoGAND/U
+      BJ+8wru9k9OJx5jHJManI2JTrfJFQEnKzUndIFROAo2SzXf8Q1hl8IMHu6pX5ilr
+      hkHJlN4wZhoTRJQe0VIGgwAKdMRWtv0/h/GQTJlWzXqIv/zfa4n+RrkCaLiuwHXs
+      UHGP99hNsXj2dJy2zswwmsPBQ4MfzZu2Q/hVZJkCgYEAvKdmn3dVdBoHZ/H3aQ9v
+      1eGCW+yVfAULs6K8xaI2kOvgMmKSUMtZJnufPwlAk8wuy0HC5immZIzip2ENiVcc
+      Z6l1AOgMC1a7k9W2W4Zu0Pm/nf7p3VX9kM30aIJ48A1iWiVV30MKXY4VjC/2KTRE
+      a531pHBqyi4vMOa4BZFInxc=
+      -----END PRIVATE KEY-----
+    insecureEdgeTerminationPolicy: None
+  wildcardPolicy: None
+status:
+  ingress:
+    - host: frontend.sirasith.net
+      routerName: default
+      conditions:
+        - type: Admitted
+          status: 'True'
+          lastTransitionTime: '2025-06-22T04:55:30Z'
+      wildcardPolicy: None
+      routerCanonicalHostname: router-default.apps.itz-405mxu.infra01-lb.tok04.techzone.ibm.com

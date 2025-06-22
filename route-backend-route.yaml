@@ -1,0 +1,62 @@
+﻿kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: backend-route
+  namespace: app-project
+  uid: a9ec4477-e81f-4dfe-9541-b21906e8420e
+  resourceVersion: '5309567'
+  creationTimestamp: '2025-06-22T04:29:03Z'
+  annotations:
+    openshift.io/host.generated: 'true'
+  managedFields:
+    - manager: Mozilla
+      operation: Update
+      apiVersion: route.openshift.io/v1
+      time: '2025-06-22T05:10:15Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:spec':
+          'f:host': {}
+          'f:path': {}
+          'f:port':
+            .: {}
+            'f:targetPort': {}
+          'f:tls':
+            .: {}
+            'f:termination': {}
+          'f:to':
+            'f:kind': {}
+            'f:name': {}
+            'f:weight': {}
+          'f:wildcardPolicy': {}
+    - manager: openshift-router
+      operation: Update
+      apiVersion: route.openshift.io/v1
+      time: '2025-06-22T05:10:15Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:status':
+          'f:ingress': {}
+      subresource: status
+spec:
+  host: frontend.sirasith.net
+  path: /api
+  to:
+    kind: Service
+    name: backend
+    weight: 100
+  port:
+    targetPort: 8080
+  tls:
+    termination: edge
+  wildcardPolicy: None
+status:
+  ingress:
+    - host: frontend.sirasith.net
+      routerName: default
+      conditions:
+        - type: Admitted
+          status: 'True'
+          lastTransitionTime: '2025-06-22T05:10:15Z'
+      wildcardPolicy: None
+      routerCanonicalHostname: router-default.apps.itz-405mxu.infra01-lb.tok04.techzone.ibm.com
