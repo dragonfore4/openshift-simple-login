@@ -39,7 +39,6 @@ metadata:
           'f:ingress': {}
       subresource: status
 spec:
-  host: frontend.sirasith.net
   path: /api
   to:
     kind: Service
