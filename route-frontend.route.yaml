@@ -41,7 +41,6 @@ metadata:
             'f:weight': {}
           'f:wildcardPolicy': {}
 spec:
-  host: frontend.sirasith.net
   to:
     kind: Service
     name: frontend
