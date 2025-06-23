@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: backend
-        image: dragonfore4/backend-simple-login-image:v9
+        image: dragonfore4/backend-simple-login-image:v10
         ports:
         - containerPort: 8080
 ---
