@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: dragonfore4/frontend-simple-login-image:v3
+        image: dragonfore4/frontend-simple-login-image:v4
         imagePullPolicy: Always
         ports:
         - containerPort: 3000
